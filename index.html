@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EcoWave Events – Sustainable Event Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="#home" class="brand">
+        <span class="brand-icon">🌿</span>
+        <span class="brand-text">
+          Ayush<span class="brand-accent"></span> Events
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#events" class="nav-link">Events</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-button" aria-label="Toggle theme">
+          🌙
+        </button>
+        <div id="authArea">
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section id="homePage" class="page active">
+      <section class="hero">
+        <div class="hero-content">
+          <h1 style=color:black>Book Eco Events That Give Back 🌍</h1>
+          <p>
+            Discover zero‑waste markets, carbon‑neutral concerts, and
+            regeneration‑focused drives curated for conscious communities.
+          </p>
+          <div class="hero-actions">
+            <a href="#events" class="btn-primary">Book Now</a>
+            <a href="#events" class="btn-secondary-outline" style=color:black>Explore Events</a>
+          </div>
+          <div class="hero-badges">
+            <span class="badge-pill">♻️ Zero Waste Partners</span>
+            <span class="badge-pill">🌱 Carbon‑Neutral Options</span>
+            <span class="badge-pill">💧 Low‑Impact Venues</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <p class="hero-card-label">Next Highlight</p>
+            <h2>Ayush Event</h2>
+            <p>Help grow your city’s green canopy this month.</p>
+            <span class="eco-tag eco-tag--regeneration">Regeneration</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" style=color:black>Why Eco?</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Designed for Low Impact</h3>
+            <p>
+              We partner only with organizers who prioritize low‑waste,
+              low‑carbon experiences, so every ticket helps the planet.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Verified Sustainability Badges</h3>
+            <p>
+              Every event displays clear badges like “Zero Waste” or
+              “Carbon Neutral” so you can choose what matters most.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Community‑Driven</h3>
+            <p>
+              Join a growing community of volunteers, organizers, and
+              attendees shaping greener cities together.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-rows">
+        <div class="home-row">
+          <div class="home-row-header">
+            <h2 class="section-title">Upcoming spotlight events</h2>
+            <p class="section-subtitle">
+              Hand‑picked experiences happening in the next few weeks.
+            </p>
+          </div>
+          <div class="home-row-grid">
+            <article class="event-card home-row-card">
+              <div class="event-card-header">
+                <h3 class="event-card-title">Forest Revival</h3>
+                <span class="badge-eco">Regeneration</span>
+              </div>
+              <div class="event-meta">
+                <span data-icon="date">28 Apr 2026</span>
+                <span data-icon="time">8:00 AM – 1:00 PM</span>
+                <span data-icon="location">Northside Urban Forest</span>
+              </div>
+              <p class="home-row-text">
+                Join local volunteers and ecologists to restore native habitats
+                and expand the city&apos;s green canopy.
+              </p>
+              <div class="event-footer">
+                <div class="event-level">
+                  <span class="tag-chip">🌳 Community drive</span>
+                </div>
+                <a href="#events" class="btn-secondary">View details</a>
+              </div>
+            </article>
+
+            <article class="event-card home-row-card">
+              <div class="event-card-header">
+                <h3 class="event-card-title">Carbon‑Neutral Night</h3>
+                <span class="badge-eco">Carbon Neutral</span>
+              </div>
+              <div class="event-meta">
+                <span data-icon="date">02 May 2026</span>
+                <span data-icon="time">6:00 PM – 10:00 PM</span>
+                <span data-icon="location">Riverside Eco Park</span>
+              </div>
+              <p class="home-row-text">
+                An intimate concert powered by renewables with offsets for
+                travel emissions and plant‑based food trucks.
+              </p>
+              <div class="event-footer">
+                <div class="event-level">
+                  <span class="tag-chip">🎵 Live music</span>
+                </div>
+                <a href="#events" class="btn-secondary">View details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="home-row">
+          <div class="home-row-header">
+            <h2 class="section-title">eco themes</h2>
+            <p class="section-subtitle">
+              Explore collections your community books again and again.
+            </p>
+          </div>
+          <div class="home-row-grid home-row-grid--compact">
+            <div class="pill-card">
+              <h3>Zero‑Waste Weekends</h3>
+              <p>
+                Farmers markets, refill pop‑ups, and plastic‑free product
+                showcases.
+              </p>
+              <div class="pill-meta">
+                <span class="tag-chip">♻️ Zero Waste</span>
+                <span class="tag-chip">Sat & Sun</span>
+              </div>
+            </div>
+            <div class="pill-card">
+              <h3>City Green Trails</h3>
+              <p>
+                Guided walks, cycling routes, and micro‑cleanup stops in one
+                experience.
+              </p>
+              <div class="pill-meta">
+                <span class="tag-chip">🚲 Low impact</span>
+                <span class="tag-chip">Outdoor</span>
+              </div>
+            </div>
+            <div class="pill-card">
+              <h3>Ayush Circular Design Lab</h3>
+              <p>
+                Talks and labs for creators rethinking waste, reuse, and repair.
+              </p>
+              <div class="pill-meta">
+                <span class="tag-chip">🧪 Innovation</span>
+                <span class="tag-chip">Workshops</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="eventsPage" class="page">
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title" style=color:black>Upcoming Eco‑Friendly Events</h2>
+            <p class="section-subtitle">
+              Filter by date, type, or sustainability focus.
+            </p>
+          </div>
+        </div>
+        <div class="filters">
+          <div class="filter-group">
+            <label for="filterDate">Date</label>
+            <input type="date" id="filterDate" />
+          </div>
+          <div class="filter-group">
+            <label for="filterType">Type</label>
+            <select id="filterType">
+              <option value="">All types</option>
+              <option value="Market">Market</option>
+              <option value="Concert">Concert</option>
+              <option value="Volunteer Drive">Volunteer Drive</option>
+              <option value="Conference">Conference</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterLevel">Sustainability level</label>
+            <select id="filterLevel">
+              <option value="">All levels</option>
+              <option value="Zero Waste">Zero Waste</option>
+              <option value="Carbon Neutral">Carbon Neutral</option>
+              <option value="Regeneration">Regeneration</option>
+              <option value="Low Impact">Low Impact</option>
+            </select>
+          </div>
+          <button id="clearFilters" class="btn-text">Clear filters</button>
+        </div>
+
+        <div id="eventsList" class="cards-grid">
+          
+        </div>
+      </section>
+    </section>
+
+    <section id="eventDetailsPage" class="page">
+      <section class="section">
+        <button id="backToEvents" class="btn-text">&larr; Back to events</button>
+
+        <div id="eventDetailsContainer" class="event-details-layout">
+          
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>
+        ♻️ Crafted by for planet‑positive gatherings. Every booking supports
+        more sustainable events.
+      </p>
+      <p class="footer-meta">
+        © <span id="yearSpan"></span> Ayush Events
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

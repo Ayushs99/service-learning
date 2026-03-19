@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login – Ayush Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html#home" class="brand">
+        <span class="brand-icon">🌿</span>
+        <span class="brand-text">
+          Ayush<span class="brand-accent"></span> Events
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#events" class="nav-link">Events</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-button" aria-label="Toggle theme">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="section auth-section">
+      <div class="auth-card">
+        <div class="auth-main">
+          <h2>Welcome back</h2>
+          <p class="auth-subtitle">
+            Sign in to pick up where you left off and keep your eco bookings in sync.
+          </p>
+
+          <form id="loginForm" class="form">
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input
+                type="email"
+                id="loginEmail"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                autocomplete="current-password"
+                placeholder="Minimum 6 characters"
+                required
+              />
+            </div>
+
+            <p id="loginError" class="form-error" style="min-height:1em;"></p>
+
+            <button type="submit" class="btn-primary" style="width:100%;margin-top:0.2rem;">
+              Login
+            </button>
+
+            <p class="auth-toggle" style="margin-top:0.8rem;">
+              New to Wave?
+              <a href="register.html" class="btn-text">Create an account</a>
+            </p>
+          </form>
+        </div>
+
+        <aside class="auth-side">
+          <div class="auth-side-inner">
+            <span class="auth-pill">🌿 Membership</span>
+            <h2>One profile for every planet‑positive event.</h2>
+            <p>
+              Save your details once, discover curated eco‑friendly experiences,
+              and check in faster at every venue.
+            </p>
+            <div class="auth-badges">
+              <span class="tag-chip">♻️ Zero‑waste partners</span>
+              <span class="tag-chip">🌱 Carbon‑aware travel tips</span>
+              <span class="tag-chip">💧 Local impact insights</span>
+            </div>
+          </div>
+          <p class="auth-side-footer">
+            “We believe every gathering can restore more than it takes.”
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>
+        ♻️ Crafted by Ayush for planet‑positive gatherings. Every booking supports
+        more sustainable events.
+      </p>
+      <p class="footer-meta">
+        © <span id="yearSpan"></span> AyushWave Events
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const THEME_KEY = "ecoTheme";
+    const USER_KEY = "ecoUser";
+
+    function initTheme() {
+      const saved = localStorage.getItem(THEME_KEY);
+      const systemPrefersDark = window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = saved || (systemPrefersDark ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+      const toggleBtn = document.getElementById("themeToggle");
+      if (toggleBtn) {
+        toggleBtn.textContent = theme === "light" ? "🌙" : "☀️";
+        toggleBtn.addEventListener("click", () => {
+          const current = document.documentElement.dataset.theme || "light";
+          const next = current === "light" ? "dark" : "light";
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem(THEME_KEY, next);
+          toggleBtn.textContent = next === "light" ? "🌙" : "☀️";
+        });
+      }
+    }
+
+    function initLogin() {
+      const yearSpan = document.getElementById("yearSpan");
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      const form = document.getElementById("loginForm");
+      const errorEl = document.getElementById("loginError");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        errorEl.textContent = "";
+
+        const email = document.getElementById("loginEmail").value.trim();
+        const pass = document.getElementById("loginPassword").value.trim();
+
+        if (!email || !/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(email)) {
+          errorEl.textContent = "Enter a valid email address.";
+          return;
+        }
+        if (!pass || pass.length < 6) {
+          errorEl.textContent = "Password must be at least 6 characters.";
+          return;
+        }
+
+        const user = { email, name: email.split("@")[0] || "Eco Guest" };
+        localStorage.setItem(USER_KEY, JSON.stringify(user));
+
+        window.location.href = "index.html#home";
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+      initLogin();
+    });
+  </script>
+</body>
+</html>
+
